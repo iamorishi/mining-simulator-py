@@ -3,6 +3,10 @@ The goal of this project is to develop a simulation for a space mining operation
 simulation will manage and track the efficiency of mining trucks and unload stations over a
 continuous 72-hour operation.
 
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+[![Tested on Windows](https://img.shields.io/badge/Tested_on-Windows-brightgreen.svg)](https://www.microsoft.com/en-us/windows/)
+[![Tested on Ubuntu](https://img.shields.io/badge/Tested_on-Ubuntu-orange.svg)](https://ubuntu.com/)
+
 ## Project Design and Sample Results
 **Project Design and sample result files are available at:**
 
@@ -10,9 +14,11 @@ continuous 72-hour operation.
 - `./docs/sample_results.md` -> Sample results documentation
 
 ## Getting Started
-1. Create virtual enviroment and activate it:
+NOTE: The MiningSimulator python scripts was developed 
+1. Create virtual enviroment and activate it. 
 ```sh
 python -m venv .venv
+# For Windows based systems
 .\.venv\Scripts\activate
 ```
 2. Install dependencies:
