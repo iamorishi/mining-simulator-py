@@ -1,0 +1,28 @@
+[pytest]
+[tool.pytest.ini_options]
+testpaths = ["tests"]  # Tests Directory
+addopts = "--strict-markers"  # Enforce strict marker usage
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s %(levelname)s %(message)s"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.black]
+line-length = 120
+skip-string-normalization = false  
+target-version = ['py311', 'py312']  # Adjust for your Python versions
+exclude = '''
+^/(
+  (
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''

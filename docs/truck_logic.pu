@@ -1,0 +1,25 @@
+@startuml
+title Logic of MiningTruck tick()
+
+start
+  :Log data for each tick using log_data();
+  
+  :Increment clock tick;
+
+  if (_remaining_time_in_state > 0) then (Yes)
+    :Decrement _remaining_time_in_state;
+  endif
+
+  :Get current state;
+
+  if (Current State == Unloading and not unloading_complete) then (Yes)
+    stop
+  endif
+
+  if (_remaining_time_in_state == 0) then (Yes)
+    :Move to next state;
+    :Reset remaining time in state using _state_duration(get_state());
+  endif
+
+  stop
+@enduml

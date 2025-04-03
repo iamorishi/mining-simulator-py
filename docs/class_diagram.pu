@@ -1,0 +1,44 @@
+@startuml
+
+
+abstract class SimulationNode {
+  +idx
+  +node_type
+  +current_tick
+  #_state
+  #_data_log_list
+  +get_state()
+  {abstract} _next_state()
+  {abstract} +log_data()
+  {abstract} +tick()
+}
+
+class MiningTruck extends SimulationNode {
+  +unload_site_id
+  +unload_queued
+  #_remaining_time_in_state
+  #_data_log_list
+  {static} #_state_duration()
+  #_next_state()
+  +assign_unload_site()
+  +log_data()
+  +tick()
+}
+
+class UnloadingStation extends SimulationNode {
+    +unloading_truck_id
+    +unload_queue: UnloadQueue
+    #_next_state()
+    +get_wait_time()
+    +log_data()
+    +tick()
+}
+
+
+class UnloadQueue extends SimpleQueue {
+    +station_id
+    +get_truck()
+    +put_truck()
+    +get_qsize()
+}
+@enduml

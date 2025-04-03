@@ -1,0 +1,13 @@
+@startuml
+title Logic of Simulator tick()
+
+start
+:Increment simulation tick counter;
+:Find trucks at Unloading station that are NOT queued;
+:Use the assignment algorithm with the trucks above to get station assignments;
+:Call tick() function for all trucks not in Unloading state;
+:Call tick() function for all unloading stations - pass in truck assignments;
+:Call tick() function for truck in Unloading state, dequeue required trucks where needed;
+
+stop
+@enduml

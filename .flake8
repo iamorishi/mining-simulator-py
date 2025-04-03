@@ -1,0 +1,11 @@
+[flake8]
+max-line-length = 120  
+extend-ignore = E203, W503 
+exclude = 
+    # Common exclusions
+    .git 
+    __pycache__
+    .venv
+    build
+    dist  
+#per-file-ignores = { "*/mining_sim/*" = "", "*/tests/*" = "" }  # Only run Flake8 in these folders
