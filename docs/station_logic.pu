@@ -1,0 +1,18 @@
+@startuml
+title Logic of UnloadingStation tick()
+
+start
+  :Increment current tick;
+
+    while (trucks (to be queued)) is (not empty)
+       :Put truck in queue; 
+    endwhile (empty)
+
+  :Complete Unload Operation - Get first truck from queue (FIFO);
+
+  :Log data for each tick;
+
+  :Return truck dequeued from queue;
+
+stop
+@enduml
