@@ -248,7 +248,7 @@ class MiningSimulator:
     def run(self):
         """Function to run the simulation until stop time passed through class constructor"""
         sim_stop_time = min(self.stop_time, self.max_time)
-        print(f"\n{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: Simulation started!")
+        print(f"\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Simulation started!")
         print(f"Num of Trucks: {self.num_trucks}, Num of Stations: {self.num_stations}")
 
         while self.current_tick <= sim_stop_time:
@@ -258,7 +258,7 @@ class MiningSimulator:
             self.tick()
 
         sys.stdout.flush()
-        print(f"\n{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: Simulation Complete! :)")
+        print(f"\n{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Simulation Complete! :)")
 
     def analyze_simulation_logs(self):
         """Function for analyzing data logs from the simulation"""
@@ -268,7 +268,7 @@ class MiningSimulator:
         station_df_list = convert_log_to_df(self.unloading_stations)
 
         # Compute metrics
-        print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: Analyzing Trucks Log Data (can take a few minutes)...")
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Analyzing Trucks Log Data (can take a few minutes)...")
         # NOTE: Analysis functions are not optimised for speed right now
         if len(self.mining_trucks) > 1000:
             print("WARNING: Large number of trucks input to simulation. Analysis will take a while!!!")
@@ -278,8 +278,8 @@ class MiningSimulator:
         compute_cumulative_truck_stats(truck_df_list)
 
         # Compute and output station metrics
-        print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: Analyzing Trucks Log Data (can take a few minutes)...")
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Analyzing Trucks Log Data (can take a few minutes)...")
         compute_station_metrics(station_df_list)
 
         # Exit
-        print(f"{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}: Analysis Complete! :)")
+        print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: Analysis Complete! :)")
