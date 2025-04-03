@@ -26,7 +26,9 @@ python -m venv .venv
    At the end of simulation, results are saved to:
    - Station stats are saved to `./results/station_stats.json`
    - Truck stats are saved to `./results/truck_stats.json`
-3. Run tests:
+
+ ### Unit Tests
+ Run unit tests (if needed):
    ```sh
    pytest tests/
    ```
